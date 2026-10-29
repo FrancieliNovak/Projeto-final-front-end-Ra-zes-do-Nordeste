@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido — Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body data-raiz="../" class="pagina_menu_inferior">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="../index.html">
+          <span class="logo_marca">
+            <img src="../assets/imagens/logo_raizes.png" alt="" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+
+        <nav class="menu_navegacao" aria-label="Menu principal">
+          <a class="link_menu" href="cardapio.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/cardapio.svg"
+              alt=""
+            />
+            <span>Cardápio</span>
+          </a>
+          <a class="link_menu" href="carrinho.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/carrinho.svg"
+              alt=""
+            />
+            <span>Carrinho</span>
+            <span class="contador_carrinho" hidden>0</span>
+          </a>
+          <a class="link_menu" href="pedido.html" aria-current="page">
+            <img class="icone_menu" src="../assets/icones/pedido.svg" alt="" />
+            <span>Pedido</span>
+          </a>
+          <a class="link_menu" href="fidelidade.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/fidelidade.svg"
+              alt=""
+            />
+            <span>Fidelidade</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo_principal conteudo_estreito">
+      <div class="estado_vazio sem_pedido" hidden>
+        <h1 class="titulo_secao">Nenhum pedido em andamento</h1>
+        <p class="texto_secao">
+          Depois que o pagamento for aprovado, você poderá acompanhar cada etapa
+          do seu pedido nesta página.
+        </p>
+        <a class="botao_principal" href="cardapio.html">Ver o cardápio</a>
+      </div>
+
+      <div class="conteudo_pedido" hidden>
+        <ol class="etapas_compra" aria-label="Etapas do pedido">
+          <li class="etapa_compra etapa_compra_concluida">1. Carrinho</li>
+          <li class="etapa_compra etapa_compra_concluida">2. Pagamento</li>
+          <li class="etapa_compra etapa_compra_atual" aria-current="step">
+            3. Acompanhar
+          </li>
+        </ol>
+
+        <div class="cabecalho_pagina">
+          <p class="texto_loja_atual texto_dados_pedido"></p>
+          <h1 class="titulo_secao numero_pedido"></h1>
+        </div>
+
+        <div class="caixa_sucesso">
+          <strong>Pagamento confirmado</strong>
+          <span class="texto_caixa_sucesso"
+            >Seu pedido foi recebido pela loja.</span
+          >
+        </div>
+
+        <!-- Etapas do Status -->
+        <ol class="linha_tempo_status"></ol>
+
+        <!-- Botão para finalizar pedido entregue. Limpa os status  -->
+        <button
+          class="botao_principal botao_largura_total botao_entregue"
+          type="button"
+          hidden
+        >
+          Entregue
+        </button>
+
+        <details class="detalhes_itens_pedido">
+          <summary class="resumo_itens_pedido"></summary>
+          <ul class="lista_itens_pedido"></ul>
+          <div class="valores_pedido"></div>
+        </details>
+
+        <div class="caixa_pontos_pedido"></div>
+
+        <a class="botao_secundario botao_largura_total" href="cardapio.html"
+          >Voltar ao cardápio</a
+        >
+      </div>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste - Rapidez, qualidade e cultura.
+      </p>
+    </footer>
+
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+    <script src="../js/dados.js"></script>
+    <script src="../js/principal.js"></script>
+    <script src="../js/pagina_pedido.js"></script>
+  </body>
+</html>

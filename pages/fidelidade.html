@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa de fidelidade — Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body data-raiz="../" class="pagina_menu_inferior">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="../index.html">
+          <span class="logo_marca">
+            <img src="../assets/imagens/logo_raizes.png" alt="" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+
+        <nav class="menu_navegacao" aria-label="Menu principal">
+          <a class="link_menu" href="cardapio.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/cardapio.svg"
+              alt=""
+            />
+            <span>Cardápio</span>
+          </a>
+          <a class="link_menu" href="carrinho.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/carrinho.svg"
+              alt=""
+            />
+            <span>Carrinho</span>
+            <span class="contador_carrinho" hidden>0</span>
+          </a>
+          <a class="link_menu" href="pedido.html">
+            <img class="icone_menu" src="../assets/icones/pedido.svg" alt="" />
+            <span>Pedido</span>
+          </a>
+          <a class="link_menu" href="fidelidade.html" aria-current="page">
+            <img
+              class="icone_menu"
+              src="../assets/icones/fidelidade.svg"
+              alt=""
+            />
+            <span>Fidelidade</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo_principal conteudo_estreito">
+      <div class="cabecalho_pagina">
+        <p class="texto_loja_atual texto_saudacao">Olá!</p>
+        <h1 class="titulo_secao">Programa de fidelidade</h1>
+      </div>
+
+      <!--Pontuação -->
+      <section
+        class="cartao_destaque secao_regras_fidelidade"
+        aria-labelledby="titulo_regras"
+      >
+        <h2 class="titulo_resumo" id="titulo_regras">
+          Como acumular e resgatar pontos
+        </h2>
+        <p class="texto_secao texto_regra_fidelidade"></p>
+      </section>
+
+      <!-- Simulação de Login de fidelidade
+        - Nome completo e CPF são obrigatórios.
+        - O consentimento de participação no programa também é obrigatório.
+        - Atualmento o CPF não é armazenado, enviado e utilizado, sem banco de dados. O campo foi colocado somente para uma simulação de login.
+        -->
+      <section class="area_login" aria-labelledby="titulo_login">
+        <h2 class="titulo_resumo" id="titulo_login">
+          Entre para ver seus pontos
+        </h2>
+
+        <div class="caixa_informativa">
+          <p>
+            <strong>Por que pedimos esses dados?</strong>
+            O nome é usado para lhe identificar na área de fidelidade e o CPF
+            serve para identificar o seu cadastro no programa. Seus dados
+            poderão ser excluídos quando desejar.
+          </p>
+        </div>
+
+        <form class="formulario_login" novalidate>
+          <div class="grupo_campo">
+            <label class="rotulo_campo" for="campo_nome_completo"
+              >Nome completo *</label
+            >
+            <input
+              class="campo_texto"
+              type="text"
+              id="campo_nome_completo"
+              maxlength="80"
+              autocomplete="name"
+              aria-describedby="erro_login"
+            />
+          </div>
+
+          <div class="grupo_campo">
+            <label class="rotulo_campo" for="campo_cpf">CPF *</label>
+            <input
+              class="campo_texto"
+              type="text"
+              id="campo_cpf"
+              inputmode="numeric"
+              maxlength="14"
+              autocomplete="off"
+              placeholder="000.000.000-00"
+              aria-describedby="ajuda_cpf erro_login"
+            />
+            <p class="texto_ajuda" id="ajuda_cpf">Digite o CPF</p>
+          </div>
+
+          <!-- Privacidade e consentimentos-->
+          <fieldset class="grupo_opcoes grupo_opcoes_privacidade">
+            <legend class="titulo_grupo_opcoes">
+              Privacidade e Consentimento
+            </legend>
+
+            <label class="opcao_escolha">
+              <input
+                type="checkbox"
+                class="campo_consentimento_fidelidade"
+                aria-describedby="erro_login"
+              />
+              <span
+                >Autorizo o uso dos meus dados para participar do programa de
+                fidelidade (registro dos meus pedidos e dos meus pontos).
+                *</span
+              >
+            </label>
+
+            <label class="opcao_escolha">
+              <input type="checkbox" class="campo_consentimento_ofertas" />
+              <span
+                >Quero receber ofertas personalizadas pelo meu perfil de
+                consumo. (opcional)</span
+              >
+            </label>
+
+            <p class="texto_ajuda texto_registro_consentimento"></p>
+
+            <div class="acoes_privacidade">
+              <a class="link_simples" href="privacidade.html"
+                >Ver política de privacidade</a
+              >
+            </div>
+          </fieldset>
+
+          <p class="mensagem_erro" id="erro_login" hidden></p>
+
+          <button class="botao_principal botao_largura_total" type="submit">
+            Entrar
+          </button>
+        </form>
+      </section>
+
+      <div class="area_participante" hidden>
+        <section class="cartao_destaque" aria-labelledby="titulo_saldo">
+          <div class="linha_saldo">
+            <h2 class="rotulo_saldo" id="titulo_saldo">Pontos acumulados</h2>
+            <p class="valor_saldo"></p>
+          </div>
+          <!--Barra de progresso fidelidade -->
+          <div
+            class="barra_progresso"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-label="Progresso até o próximo desconto"
+          >
+            <div class="preenchimento_progresso"></div>
+          </div>
+          <p class="texto_progresso texto_ajuda"></p>
+        </section>
+
+        <!-- Ofertas aparecem só para quem concedeu as autorizações de dados. Oferta qualquer somente para simular oferta de fidelidade -->
+        <section class="secao_ofertas" aria-labelledby="titulo_ofertas" hidden>
+          <h2 class="titulo_resumo" id="titulo_ofertas">Ofertas para você</h2>
+          <div class="lista_ofertas"></div>
+        </section>
+
+        <section aria-labelledby="titulo_historico">
+          <h2 class="titulo_resumo" id="titulo_historico">
+            Histórico de pedidos
+          </h2>
+          <ul class="lista_historico_pontos"></ul>
+          <p class="texto_ajuda sem_historico" hidden>
+            Você ainda não tem pedidos registrados no programa.
+          </p>
+        </section>
+
+        <!-- Exclusao de dados -->
+        <div class="area_exclusao">
+          <p class="texto_ajuda">
+            Excluir meus dados e apaguar consentimentos, seus pontos e seu
+            histórico de pedidos do programa de fidelidade, e encerrar o login.
+          </p>
+          <button
+            class="botao_secundario botao_perigo botao_excluir_dados"
+            type="button"
+          >
+            Excluir meus dados
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste - Rapidez, qualidade e cultura.
+      </p>
+    </footer>
+
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+
+    <script src="../js/dados.js"></script>
+    <script src="../js/principal.js"></script>
+    <script src="../js/pagina_fidelidade.js"></script>
+  </body>
+</html>

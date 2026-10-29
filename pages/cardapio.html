@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio — Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body data-raiz="../" class="pagina_menu_inferior">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="../index.html">
+          <span class="logo_marca">
+            <img src="../assets/imagens/logo_raizes.png" alt="logo raizes" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+
+        <div class="seletor_loja">
+          <label class="rotulo_seletor_loja" for="campo_loja">Loja</label>
+          <select class="campo_seletor_loja" id="campo_loja"></select>
+        </div>
+
+        <!-- Responsividade Menu -->
+        <nav class="menu_navegacao" aria-label="Menu principal">
+          <a class="link_menu" href="cardapio.html" aria-current="page">
+            <img
+              class="icone_menu"
+              src="../assets/icones/cardapio.svg"
+              alt="icone cardapio"
+            />
+            <span>Cardápio</span>
+          </a>
+          <a class="link_menu" href="carrinho.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/carrinho.svg"
+              alt="icone carrinho"
+            />
+            <span>Carrinho</span>
+            <span class="contador_carrinho" hidden>0</span>
+          </a>
+          <a class="link_menu" href="pedido.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/pedido.svg"
+              alt="icone pedido"
+            />
+            <span>Pedido</span>
+          </a>
+          <a class="link_menu" href="fidelidade.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/fidelidade.svg"
+              alt="icone fidelidade"
+            />
+            <span>Fidelidade</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo_principal">
+      <div class="area_cardapio">
+        <nav class="lista_categorias" aria-label="Categorias do cardápio"></nav>
+
+        <section class="secao_produtos">
+          <!-- Para camoanhas sazonais -->
+          <div class="aviso_sazonal" hidden></div>
+
+          <h1 class="titulo_categoria">Cardápio</h1>
+
+          <div class="lista_produtos"></div>
+        </section>
+
+        <!-- Resumo do carrinho aparece só em telas grandes -->
+        <aside
+          class="resumo_carrinho_lateral"
+          aria-labelledby="titulo_resumo_lateral"
+        >
+          <h2 class="titulo_resumo" id="titulo_resumo_lateral">Seu carrinho</h2>
+          <ul class="lista_resumo_itens"></ul>
+          <p class="texto_carrinho_vazio">Seu carrinho está vazio.</p>
+          <div class="linha_total">
+            <span>Total</span>
+            <strong class="valor_total_resumo">R$ 0,00</strong>
+          </div>
+          <a
+            class="botao_principal botao_largura_total botao_revisar_pagar"
+            href="carrinho.html"
+            >Revisar e pagar</a
+          >
+        </aside>
+      </div>
+
+      <!-- Barra fixa do carrinho aparece só no celular, quando há itens -->
+      <a class="barra_carrinho_fixa" href="carrinho.html" hidden>
+        <span class="texto_barra_carrinho">0 itens · R$ 0,00</span>
+        <span>Ver carrinho ›</span>
+      </a>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste - rapidez, qualidade e cultura
+      </p>
+    </footer>
+
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+    <script src="../js/dados.js"></script>
+    <script src="../js/principal.js"></script>
+    <script src="../js/pagina_cardapio.js"></script>
+  </body>
+</html>

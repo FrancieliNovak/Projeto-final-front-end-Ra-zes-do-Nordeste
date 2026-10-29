@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho — Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body data-raiz="../" class="pagina_menu_inferior">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="../index.html">
+          <span class="logo_marca">
+            <img src="../assets/imagens/logo_raizes.png" alt="" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+
+        <nav class="menu_navegacao" aria-label="Menu principal">
+          <a class="link_menu" href="cardapio.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/cardapio.svg"
+              alt=""
+            />
+            <span>Cardápio</span>
+          </a>
+          <a class="link_menu" href="carrinho.html" aria-current="page">
+            <img
+              class="icone_menu"
+              src="../assets/icones/carrinho.svg"
+              alt=""
+            />
+            <span>Carrinho</span>
+            <span class="contador_carrinho" hidden>0</span>
+          </a>
+          <a class="link_menu" href="pedido.html">
+            <img class="icone_menu" src="../assets/icones/pedido.svg" alt="" />
+            <span>Pedido</span>
+          </a>
+          <a class="link_menu" href="fidelidade.html">
+            <img
+              class="icone_menu"
+              src="../assets/icones/fidelidade.svg"
+              alt=""
+            />
+            <span>Fidelidade</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo_principal conteudo_estreito">
+      <ol class="etapas_compra" aria-label="Etapas do pedido">
+        <li class="etapa_compra etapa_compra_atual" aria-current="step">
+          1. Carrinho
+        </li>
+        <li class="etapa_compra">2. Pagamento</li>
+        <li class="etapa_compra">3. Acompanhar</li>
+      </ol>
+
+      <div class="cabecalho_pagina">
+        <h1 class="titulo_secao">Seu carrinho</h1>
+        <p class="texto_loja_atual"></p>
+      </div>
+
+      <div class="estado_vazio carrinho_vazio" hidden>
+        <p class="texto_secao">
+          Seu carrinho está vazio. Que tal escolher uma tapioca?
+        </p>
+        <a class="botao_principal" href="cardapio.html">Ver o cardápio</a>
+      </div>
+
+      <!-- Carrinho -->
+      <div class="conteudo_carrinho" hidden>
+        <ul class="lista_itens_carrinho"></ul>
+
+        <!-- Forma de recebimento -->
+        <fieldset class="grupo_opcoes">
+          <legend class="titulo_grupo_opcoes">Como você vai receber?</legend>
+          <label class="opcao_escolha">
+            <input type="radio" name="forma_recebimento" value="retirada" />
+            <span>Para levar</span>
+          </label>
+          <label class="opcao_escolha">
+            <input type="radio" name="forma_recebimento" value="consumo" />
+            <span>Consumir na loja</span>
+          </label>
+        </fieldset>
+
+        <!-- Desconto de fidelidade -->
+        <div class="caixa_fidelidade_carrinho"></div>
+
+        <!-- Resumo de valores -->
+        <div class="resumo_valores">
+          <div class="linha_valor">
+            <span>Subtotal</span>
+            <span class="valor_subtotal">R$ 0,00</span>
+          </div>
+          <div class="linha_valor linha_desconto" hidden>
+            <span>Desconto fidelidade</span>
+            <span class="valor_desconto">− R$ 0,00</span>
+          </div>
+          <div class="linha_valor linha_valor_total">
+            <span>Total</span>
+            <strong class="valor_total">R$ 0,00</strong>
+          </div>
+
+          <a class="botao_principal botao_largura_total" href="pagamento.html"
+            >Continuar para pagamento</a
+          >
+          <a class="link_simples link_centralizado" href="cardapio.html"
+            >Adicionar mais itens</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste, rapidez, qualidade e cultura
+      </p>
+    </footer>
+
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+    <script src="../js/dados.js"></script>
+    <script src="../js/principal.js"></script>
+    <script src="../js/pagina_carrinho.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagamento — Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body data-raiz="../">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="../index.html">
+          <span class="logo_marca">
+            <img src="../assets/imagens/logo_raizes.png" alt="" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="conteudo_principal conteudo_estreito">
+      <a class="link_voltar" href="carrinho.html">‹ Voltar ao carrinho</a>
+
+      <ol class="etapas_compra" aria-label="Etapas do pedido">
+        <li class="etapa_compra etapa_compra_concluida">1. Carrinho</li>
+        <li class="etapa_compra etapa_compra_atual" aria-current="step">
+          2. Pagamento
+        </li>
+        <li class="etapa_compra">3. Acompanhar</li>
+      </ol>
+
+      <h1 class="titulo_secao">Finalizar pedido</h1>
+
+      <!--Pagamento - não tem área de dados de cartão pois o pagamneto é externo -->
+      <form class="formulario_pagamento" novalidate>
+        <div class="grupo_campo">
+          <label class="rotulo_campo" for="campo_nome"
+            >Nome para chamar o pedido *</label
+          >
+          <input
+            class="campo_texto"
+            type="text"
+            id="campo_nome"
+            name="nome"
+            maxlength="40"
+            autocomplete="given-name"
+            aria-describedby="ajuda_nome erro_nome"
+          />
+          <p class="texto_ajuda" id="ajuda_nome">
+            Usado apenas para chamar você quando o pedido estiver pronto.
+          </p>
+          <p class="mensagem_erro" id="erro_nome" hidden></p>
+        </div>
+
+        <fieldset class="grupo_opcoes" aria-describedby="erro_forma_pagamento">
+          <legend class="titulo_grupo_opcoes">Forma de pagamento *</legend>
+          <label class="opcao_escolha">
+            <input type="radio" name="forma_pagamento" value="pix" />
+            <span>Pix</span>
+          </label>
+          <label class="opcao_escolha">
+            <input type="radio" name="forma_pagamento" value="credito" />
+            <span>Cartão de crédito</span>
+          </label>
+          <label class="opcao_escolha">
+            <input type="radio" name="forma_pagamento" value="debito" />
+            <span>Cartão de débito</span>
+          </label>
+          <p class="mensagem_erro" id="erro_forma_pagamento" hidden></p>
+        </fieldset>
+
+        <div class="caixa_informativa">
+          <p>
+            O pagamento é feito por um
+            <strong>serviço externo de pagamento</strong>. A Raízes do Nordeste
+            não recebe nem guarda os dados do seu cartão.
+          </p>
+        </div>
+
+        <!-- Conscentimento da Política de privacidad-->
+        <div class="grupo_campo">
+          <label class="opcao_escolha">
+            <input
+              type="checkbox"
+              id="campo_privacidade"
+              aria-describedby="erro_privacidade"
+            />
+            <span
+              >Li e estou ciente da
+              <a class="link_simples" href="privacidade.html" target="_blank"
+                >Política de Privacidade</a
+              >
+              sobre o uso dos meus dados neste pedido. *</span
+            >
+          </label>
+          <p class="mensagem_erro" id="erro_privacidade" hidden></p>
+        </div>
+
+        <!-- Pagamento recusado-->
+        <div class="mensagem_pagamento_recusado" role="alert" hidden>
+          <strong>Pagamento não aprovado.</strong>
+          <span
+            >Tente novamente ou escolha outra forma de pagamento. Seu carrinho
+            foi mantido.</span
+          >
+        </div>
+
+        <div class="resumo_pagamento">
+          <p class="texto_resumo_pagamento"></p>
+          <button
+            class="botao_principal botao_largura_total botao_pagar"
+            type="submit"
+          >
+            Pagar R$ 0,00
+          </button>
+        </div>
+      </form>
+
+      <!--Este site não possui um sitema de pagamento, nem uma sincronização com sitema externo. Simulação do retorno de pagamento com bot~es de escolha.
+        -->
+      <section
+        class="painel_servico_pagamento"
+        aria-labelledby="titulo_servico_pagamento"
+        hidden
+      >
+        <p class="etiqueta_demonstracao">Simulação para demonstração</p>
+        <h2 class="titulo_resumo" id="titulo_servico_pagamento">
+          Aguardando resposta do serviço de pagamento
+        </h2>
+        <p class="texto_secao">
+          Nenhum pagamento real é feito neste site. Escolha a resposta que o
+          serviço externo devolveria para ver como o sistema trata cada caso.
+        </p>
+        <div class="botoes_simulacao">
+          <button class="botao_principal botao_simular_aprovado" type="button">
+            Simular pagamento aprovado
+          </button>
+          <button class="botao_secundario botao_simular_recusado" type="button">
+            Simular pagamento recusado
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste - Rapidez, qualidade e cultura.
+      </p>
+    </footer>
+
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+    <script src="../js/dados.js"></script>
+    <script src="../js/principal.js"></script>
+    <script src="../js/pagina_pagamento.js"></script>
+  </body>
+</html>

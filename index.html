@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raízes do Nordeste</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilo e responsividade. -->
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+
+  <body data-raiz="">
+    <header class="cabecalho_principal">
+      <div class="cabecalho_conteudo">
+        <a class="marca" href="index.html">
+          <span class="logo_marca">
+            <img src="assets/imagens/logo_raizes.png" alt="" />
+          </span>
+          <span class="nome_marca">Raízes do Nordeste</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="conteudo_principal">
+      <section class="secao_apresentacao">
+        <img
+          class="imagem_apresentacao"
+          src="assets/imagens/raizes.png"
+          alt=""
+        />
+        <div class="apresentacao_texto">
+          <p class="apresentacao_chamada">Para o seu dia a dia</p>
+          <h1 class="apresentacao_titulo">O melhor da culinária nordestina.</h1>
+          <p class="apresentacao_descricao">
+            O Raízes do Nordeste começou como um negócio familiar em Recife e
+            hoje está em várias cidades levando amor e afeto através da comida.
+            Venha se deliciar conosco.
+          </p>
+        </div>
+      </section>
+
+      <section class="secao_escolha_loja" aria-labelledby="titulo_escolha_loja">
+        <h2 class="titulo_secao" id="titulo_escolha_loja">Escolha sua loja</h2>
+        <p class="texto_secao">
+          Selecione a unidade para ver o cardápio disponível nela.
+        </p>
+
+        <!-- Os cartões das lojas, produtos, categorias, itens do carrinho, etc... foram criados com Java Script -->
+        <div class="lista_unidades"></div>
+
+        <p class="texto_observacao">
+          Os produtos exibidos dependem da loja escolhida. Você pode trocar de
+          loja depois, no topo do cardápio.
+        </p>
+      </section>
+    </main>
+
+    <footer class="rodape_principal">
+      <nav class="links_rodape" aria-label="Links do rodapé">
+        <a class="link_rodape" href="pages/fidelidade.html"
+          >Programa de fidelidade</a
+        >
+        <a class="link_rodape" href="pages/privacidade.html"
+          >Política de privacidade</a
+        >
+      </nav>
+      <p class="texto_rodape">
+        Raízes do Nordeste - Rapidez, qualidade e cultura.
+      </p>
+    </footer>
+
+    <!-- Avisos rápidos. -->
+    <div class="caixa_aviso" role="status" aria-live="polite"></div>
+    <!-- Ordem: regras gerais, dados do cardápio e página. -->
+    <script src="js/dados.js"></script>
+    <script src="js/principal.js"></script>
+    <script src="js/pagina_inicio.js"></script>
+  </body>
+</html>
