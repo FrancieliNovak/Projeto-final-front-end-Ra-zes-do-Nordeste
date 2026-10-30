@@ -542,6 +542,7 @@ p {
 
 .secao_apresentacao {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: var(--espaco_grande);
@@ -1462,6 +1463,7 @@ p {
   }
 
   .secao_apresentacao {
+    flex-direction: row;
     padding: 40px;
   }
 
