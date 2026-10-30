@@ -44,6 +44,13 @@ const periodoFimAno = {
   diaFim: 31,
   mesFim: 12,
 };
+const periodoJunino = {
+  nome: "São João",
+  diaInicio: 1,
+  mesInicio: 6,
+  diaFim: 31,
+  mesFim: 7,
+};
 
 /* Produtos */
 
@@ -246,5 +253,22 @@ const listaProdutos = [
     unidades: ["recife", "salvador", "fortaleza"],
     periodoSazonal: periodoFimAno,
     itensCombo: ["Tapioca de carne seca", "Suco de caju", "Bolo de macaxeira"],
+  },
+  {
+    id: "combo_junino",
+    nome: "Combo junino",
+    categoria: "sazonal",
+    descricaoCurta: "Tapioca de carne seca com queijo coalho + Quentão + Pamonha doce",
+    descricaoCompleta:
+      "Combo da campanha de São João: Tapioca de carne seca com queijo coalho + Quentão + Pamonha doce.",
+    preco: 35.0,
+    imagem: "combo_junino.png",
+    unidades: ["recife", "salvador", "fortaleza"],
+    periodoSazonal: periodoJunino,
+    itensCombo: [
+      "Tapioca de carne seca com queijo coalho",
+      "Quentão",
+      "Pamonha doce",
+    ],
   },
 ];
